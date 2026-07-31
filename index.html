@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonia Grover — Global Marketing Leader</title>
+<meta name="description" content="Product Marketing | GTM Strategy | B2B International Markets | 10+ years experience">
+<meta property="og:title" content="Sonia Grover — Global Marketing Leader">
+<meta property="og:description" content="Product Marketing · GTM Strategy · B2B International Markets">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1C3557;
+    --blue:   #2A5298;
+    --sky:    #3B82C4;
+    --lblue:  #EAF1F8;
+    --text:   #1A2332;
+    --muted:  #5A6A7E;
+    --border: #D6E4F0;
+    --bg:     #F4F8FC;
+    --white:  #FFFFFF;
+    --card:   #FFFFFF;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 780px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2A4A7F 60%, var(--sky) 100%);
+    border-radius: 16px;
+    padding: 2.5rem 2rem 2rem;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.25rem;
+  }
+  .hero-contact a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.15s;
+  }
+  .hero-contact a:hover { color: #fff; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero-pill {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.88);
+    background: rgba(255,255,255,0.10);
+  }
+  .hero-pill.solid { background: rgba(255,255,255,0.20); border-color: rgba(255,255,255,0.4); }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 6px;
+    margin-bottom: 1.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab {
+    flex: 1;
+    min-width: 80px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    padding: 8px 12px;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .tab:hover { color: var(--text); background: var(--lblue); }
+  .tab.active { color: var(--white); background: var(--blue); }
+
+  /* ── SECTIONS ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  /* ── SECTION LABEL ── */
+  .sec-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--lblue);
+  }
+
+  /* ── SUMMARY ── */
+  .summary-block {
+    background: var(--lblue);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.1rem;
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── METRICS ── */
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 1.25rem; }
+  .metric {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 0 0 10px 10px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .metric-num { font-size: 26px; font-weight: 600; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+  .metric-label { font-size: 10px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .metric-sub { font-size: 10px; color: var(--muted); line-height: 1.4; }
+
+  /* ── MARKETS ── */
+  .market-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .market-tag {
+    font-size: 12px;
+    padding: 5px 12px;
+    background: var(--lblue);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  /* ── JOB CARDS ── */
+  .job {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .job:hover { border-color: var(--sky); box-shadow: 0 2px 12px rgba(59,130,196,0.08); }
+  .job.open { border-color: var(--blue); }
+  .job-summary {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .job-left { flex: 1; }
+  .job-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .job-co { font-size: 12.5px; font-weight: 500; color: var(--sky); margin-bottom: 2px; }
+  .job-ctx { font-size: 11.5px; color: var(--muted); font-style: italic; }
+  .job-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+  .job-date {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--blue);
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  .job-toggle-btn {
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+  }
+  .chevron-icon { transition: transform 0.2s; display: inline-block; font-size: 12px; }
+  .job.open .chevron-icon { transform: rotate(180deg); }
+  .job-details {
+    display: none;
+    padding: 0 1.25rem 1.1rem;
+    border-top: 1px dashed var(--border);
+  }
+  .job.open .job-details { display: block; }
+  .job-details ul { list-style: none; padding: 0; margin-top: 10px; }
+  .job-details li {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .job-details li::before { content: "›"; color: var(--sky); position: absolute; left: 0; font-weight: 600; font-size: 14px; line-height: 1.4; }
+  .job-details li strong { color: var(--navy); }
+
+  /* ── SKILLS ── */
+  .skill-group { margin-bottom: 1rem; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-size: 11.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--lblue);
+    border: 1px solid var(--border);
+    color: var(--navy);
+    font-weight: 500;
+    cursor: default;
+    transition: all 0.15s;
+  }
+  .skill-tag:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+  /* ── EDU ── */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+  }
+  .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .edu-deg { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .edu-sch { font-size: 12px; color: var(--sky); }
+  .edu-yr {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--lblue);
+    padding: 3px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .contact-item:hover { border-color: var(--blue); box-shadow: 0 2px 8px rgba(42,82,152,0.1); }
+  .contact-icon { font-size: 20px; color: var(--blue); flex-shrink: 0; }
+  .contact-label { font-size: 10px; color: var(--muted); margin-bottom: 2px; }
+  .contact-val { font-size: 12.5px; font-weight: 500; color: var(--text); }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.25rem;
+    background: var(--blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .cta-btn:hover { background: var(--navy); }
+
+  /* ── FOOTER ── */
+  .footer { text-align: center; margin-top: 2rem; font-size: 11px; color: var(--muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero-name { font-size: 30px; }
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .tab { font-size: 11px; padding: 7px 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-name">Sonia Grover</div>
+    <div class="hero-title">Global Marketing Leader &nbsp;·&nbsp; Product Marketing &nbsp;·&nbsp; B2B International Markets</div>
+    <div class="hero-contact">
+      <a href="tel:+919975625587">📞 +91 9975625587</a>
+      <a href="mailto:sgrover3001@gmail.com">✉ sgrover3001@gmail.com</a>
+      <a href="https://www.linkedin.com/in/groversonia/" target="_blank" rel="noopener">🔗 linkedin.com/in/groversonia</a>
+      <a href="https://www.datacamp.com/portfolio/sgrover3001" target="_blank" rel="noopener">📊 Data Portfolio</a>
+      <span>📍 Mumbai · Open to Pune / Hyderabad / Gurugram</span>
+    </div>
+    <div class="hero-pills">
+      <span class="hero-pill solid">10+ years B2B marketing</span>
+      <span class="hero-pill solid">7+ international markets</span>
+      <span class="hero-pill">Offshore–onshore delivery</span>
+      <span class="hero-pill">Global stakeholder management</span>
+      <span class="hero-pill">Financial services · SaaS · Research tech</span>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist">
+    <button class="tab active" onclick="switchTab('summary', this)" role="tab">Summary</button>
+    <button class="tab" onclick="switchTab('experience', this)" role="tab">Experience</button>
+    <button class="tab" onclick="switchTab('skills', this)" role="tab">Skills</button>
+    <button class="tab" onclick="switchTab('education', this)" role="tab">Education</button>
+    <button class="tab" onclick="switchTab('contact', this)" role="tab">Contact</button>
+  </div>
+
+  <!-- ── SUMMARY ── -->
+  <div class="section active" id="tab-summary">
+    <div class="summary-block">
+      Global marketing professional with 10+ years delivering end-to-end marketing for international B2B organisations — across financial services, SaaS, and research technology sectors. Experienced in aligning with global stakeholders across USA, Europe &amp; APAC on strategy, brand, and pipeline. Combines product positioning, GTM strategy, ICP &amp; cohort analysis, and full-funnel content production (sales decks, whitepapers, landing pages) with AI-assisted content, HubSpot, ABM, and Python-based analytics. Delivered 25% YoY MQL growth and 20% brand presence improvement across 7+ international markets.
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-num">25%</div>
+        <div class="metric-label">YoY MQL growth</div>
+        <div class="metric-sub">Pipeline growth across international markets</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">20%</div>
+        <div class="metric-label">Brand presence uplift</div>
+        <div class="metric-sub">Via integrated multichannel campaigns</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">15+</div>
+        <div class="metric-label">Awards led</div>
+        <div class="metric-sub">Industry recognitions won</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">7+</div>
+        <div class="metric-label">Markets</div>
+        <div class="metric-sub">USA, APAC, Middle East, Europe</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="sec-label">International market experience</div>
+      <div class="market-grid">
+        <span class="market-tag">🇺🇸 USA</span>
+        <span class="market-tag">🇯🇵 Japan</span>
+        <span class="market-tag">🇨🇳 China</span>
+        <span class="market-tag">🇰🇷 South Korea</span>
+        <span class="market-tag">🇹🇼 Taiwan</span>
+        <span class="market-tag">🇦🇪 Middle East</span>
+        <span class="market-tag">🌏 Southeast Asia</span>
+        <span class="market-tag">🇬🇧 Europe</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EXPERIENCE ── -->
+  <div class="section" id="tab-experience">
+    <p style="font-size:12px; color:var(--muted); margin-bottom:12px;">Click any role to expand full details.</p>
+
+    <div class="job" id="job0">
+      <div class="job-summary" onclick="toggleJob('job0')">
+        <div class="job-left">
+          <div class="job-title">Digital Marketing &amp; Product Marketing Manager</div>
+          <div class="job-co">NAV Fund Administration (NAV Consulting)</div>
+          <div class="job-ctx">Alternative investment fund administration — institutional B2B across USA, Europe &amp; APAC</div>
+        </div>
+        <div class="job-right">
+          <span class="job-date">Jan 2021 – Present</span>
+          <button class="job-toggle-btn" aria-label="Toggle details"><span class="chevron-icon">▾</span> Details</button>
+        </div>
+      </div>
+      <div class="job-details">
+        <ul>
+          <li><strong>Global stakeholder management:</strong> Owned end-to-end marketing strategy for an internationally headquartered organisation, aligning with leadership across USA and Europe on annual marketing plans, brand positioning, and pipeline priorities.</li>
+          <li><strong>Product positioning &amp; sales enablement:</strong> Translated complex fund administration products into institutional value propositions; supported creation of sales decks and pitch materials for BD teams and external stakeholder presentations across international markets.</li>
+          <li><strong>Content asset programme:</strong> Played a key role in building and managing TOFU and MOFU assets — whitepapers, industry reports, case studies, client testimonials, and landing pages — coordinating across teams from brief to distribution.</li>
+          <li><strong>ICP &amp; cohort analysis:</strong> Ideal Customer Profiles for new and existing segments; cohort analysis to inform nurture sequencing and content personalisation strategies.</li>
+          <li><strong>AI-assisted content:</strong> Leveraged AI tools for copywriting, accelerating production of email sequences, website content, and campaign copy at scale for global audiences.</li>
+          <li><strong>Video content programme:</strong> Collaborated cross-functionally to conceptualise and brief feature and short-form video content for product and brand initiatives, managing external video production vendors end-to-end from brief to final delivery.</li>
+          <li>Spearheaded full-funnel digital transformation — 25% YoY MQL growth; 20% YoY brand presence improvement via integrated multichannel campaigns and ABM.</li>
+          <li>Implemented ABM strategies targeting high-value institutional accounts, boosting targeted lead quality and accelerating pipeline velocity.</li>
+          <li>Liaised with IT team to implement an in-house tracking and reporting system, enabling data-driven campaign optimisation.</li>
+          <li>Led 15+ award submissions, winning key industry recognition to establish market credibility.</li>
+          <li>Managed and mentored a team of 3–4 marketing professionals and coordinated global media agency relationships.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job" id="job1">
+      <div class="job-summary" onclick="toggleJob('job1')">
+        <div class="job-left">
+          <div class="job-title">Unit Lead — Product &amp; Growth Marketing</div>
+          <div class="job-co">Crimson Interactive (Enago)</div>
+          <div class="job-ctx">Academic research services — B2B &amp; B2C across Japan, China, Taiwan, Korea, USA</div>
+        </div>
+        <div class="job-right">
+          <span class="job-date">Apr 2019 – Dec 2020</span>
+          <button class="job-toggle-btn" aria-label="Toggle details"><span class="chevron-icon">▾</span> Details</button>
+        </div>
+      </div>
+      <div class="job-details">
+        <ul>
+          <li><strong>GTM strategy:</strong> Developed and executed go-to-market strategies for new product and service launches — positioning, competitive analysis, messaging frameworks, sales decks, and enablement for global teams.</li>
+          <li><strong>Cross-cultural marketing:</strong> Managed localised campaigns for Japan, Korea, Taiwan, China, and USA — adapting messaging, landing pages, and media strategy per market context.</li>
+          <li><strong>Content &amp; automation:</strong> Supported TOFU and MOFU asset production (whitepapers, case studies, landing pages); launched upsell, cart abandonment, and drip automation campaigns contributing significantly to revenue growth.</li>
+          <li>Developed long-term omnichannel marketing plan (SEO, PPC, social, email) across 5 international markets to acquire new clients, retain existing clients, and increase wallet size.</li>
+          <li>Managed JP-focused website and leveraged Google Analytics, Qlik Sense, and Hotjar for user behaviour analysis informing product and content decisions.</li>
+          <li>Boosted top-of-funnel lead generation by implementing targeted content marketing and SEO strategies.</li>
+          <li>Conducted in-depth data analysis for user behaviour before launching new service or product.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job" id="job2">
+      <div class="job-summary" onclick="toggleJob('job2')">
+        <div class="job-left">
+          <div class="job-title">Marketing Associate</div>
+          <div class="job-co">LogiNext Solutions Pvt. Ltd.</div>
+          <div class="job-ctx">SaaS logistics platform — B2B across USA, Middle East &amp; Southeast Asia</div>
+        </div>
+        <div class="job-right">
+          <span class="job-date">Mar 2017 – Dec 2018</span>
+          <button class="job-toggle-btn" aria-label="Toggle details"><span class="chevron-icon">▾</span> Details</button>
+        </div>
+      </div>
+      <div class="job-details">
+        <ul>
+          <li>Worked on full-funnel digital marketing initiatives, creating varied funnels for personalised marketing.</li>
+          <li>Drove SEM (Google Ads &amp; Yahoo Ads) campaigns for Search/Display including retargeting; increased lead generation by ~10–20% managing USD 30–50k annual budget across USA, Middle East, and Southeast Asia.</li>
+          <li>Managed &amp; optimised audiences, creatives, and landing pages for performance improvement.</li>
+          <li>Managed retargeting (paid display) and remarketing (email) campaigns to re-engage prospects and past visitors.</li>
+          <li>Coordinated over 10 marketing events annually in USA and Southeast Asia, with budgets between USD 5k and 30k each.</li>
+          <li>Improved organic traffic by 12% through SEO strategies — on-page and off-page.</li>
+          <li>Created and optimised top-funnel campaigns generating 20% of total qualified leads by designing targeted content and creatives.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job" id="job3">
+      <div class="job-summary" onclick="toggleJob('job3')">
+        <div class="job-left">
+          <div class="job-title">Account Manager</div>
+          <div class="job-co">NextGen Publishing Pvt. Ltd., Shapoorji Pallonji Group</div>
+        </div>
+        <div class="job-right">
+          <span class="job-date">Jul 2016 – Jan 2017</span>
+          <button class="job-toggle-btn" aria-label="Toggle details"><span class="chevron-icon">▾</span> Details</button>
+        </div>
+      </div>
+      <div class="job-details">
+        <ul>
+          <li>Handled key accounts including Kent; identified co-branding opportunities and led regional ad sales across Hindi/Regional consumer markets.</li>
+          <li>Collaborated with editorial and creative teams to deliver culturally relevant content and campaigns.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job" id="job4">
+      <div class="job-summary" onclick="toggleJob('job4')">
+        <div class="job-left">
+          <div class="job-title">Marketing &amp; Communications Partner</div>
+          <div class="job-co">Digilize (Digital Marketing Agency)</div>
+          <div class="job-ctx">Part-time / MBA</div>
+        </div>
+        <div class="job-right">
+          <span class="job-date">Jul 2015 – Apr 2016</span>
+          <button class="job-toggle-btn" aria-label="Toggle details"><span class="chevron-icon">▾</span> Details</button>
+        </div>
+      </div>
+      <div class="job-details">
+        <ul>
+          <li>Prepared digital marketing plans for client brand communication; managed execution of digital media strategy across multiple client accounts.</li>
+          <li>Initiated and completed corporate videos for clients.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SKILLS ── -->
+  <div class="section" id="tab-skills">
+    <div class="card">
+      <div class="skill-group">
+        <div class="skill-group-label">Global Marketing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Offshore–onshore delivery</span>
+          <span class="skill-tag">Global stakeholder management</span>
+          <span class="skill-tag">Cross-cultural marketing</span>
+          <span class="skill-tag">International B2B strategy</span>
+          <span class="skill-tag">Annual marketing plans</span>
+          <span class="skill-tag">Portfolio strategy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Product Marketing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Product positioning</span>
+          <span class="skill-tag">Messaging architecture</span>
+          <span class="skill-tag">GTM strategy</span>
+          <span class="skill-tag">ICP analysis</span>
+          <span class="skill-tag">Cohort analysis</span>
+          <span class="skill-tag">Sales enablement</span>
+          <span class="skill-tag">Sales decks</span>
+          <span class="skill-tag">Whitepapers</span>
+          <span class="skill-tag">Case studies</span>
+          <span class="skill-tag">Landing pages</span>
+          <span class="skill-tag">Market intelligence</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">AI &amp; Content</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AI-assisted marketing</span>
+          <span class="skill-tag">AI copywriting</span>
+          <span class="skill-tag">n8n</span>
+          <span class="skill-tag">Zapier</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Prompt engineering</span>
+          <span class="skill-tag">Marketing automation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Demand Generation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">ABM</span>
+          <span class="skill-tag">Full-funnel marketing</span>
+          <span class="skill-tag">Email marketing</span>
+          <span class="skill-tag">MQL optimisation</span>
+          <span class="skill-tag">Nurture programmes</span>
+          <span class="skill-tag">Performance marketing</span>
+          <span class="skill-tag">Content marketing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Digital Marketing</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SEO / SEM</span>
+          <span class="skill-tag">PPC</span>
+          <span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">LinkedIn Ads</span>
+          <span class="skill-tag">Social media marketing</span>
+          <span class="skill-tag">A/B testing</span>
+          <span class="skill-tag">CRO</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Analytics &amp; CRM</div>
+        <div class="skill-tags">
+          <span class="skill-tag">GA4</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Qlik Sense</span>
+          <span class="skill-tag">Hotjar</span>
+          <span class="skill-tag">SEMrush</span>
+          <span class="skill-tag">Ahrefs</span>
+          <span class="skill-tag">HubSpot</span>
+          <span class="skill-tag">Salesforce</span>
+          <span class="skill-tag">Mailchimp</span>
+          <span class="skill-tag">Google Data Studio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EDUCATION ── -->
+  <div class="section" id="tab-education">
+    <div class="card">
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">PCP (eMDP) — Advanced Marketing Analytics</div>
+          <div class="edu-sch">IIM Kozhikode — Executive Programme (PCP)</div>
+        </div>
+        <span class="edu-yr">2022</span>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">PGDM — Digital Marketing</div>
+          <div class="edu-sch">Universal Ai University (UBS)</div>
+        </div>
+        <span class="edu-yr">2014–16</span>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">B.Tech — Computer Science</div>
+          <div class="edu-sch">Rajasthan Technical University, Kota</div>
+        </div>
+        <span class="edu-yr">2010–14</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="section" id="tab-contact">
+    <div class="contact-grid" style="margin-bottom:1rem;">
+      <a href="tel:+919975625587" class="contact-item">
+        <span class="contact-icon">📞</span>
+        <div><div class="contact-label">Phone</div><div class="contact-val">+91 9975625587</div></div>
+      </a>
+      <a href="mailto:sgrover3001@gmail.com" class="contact-item">
+        <span class="contact-icon">✉</span>
+        <div><div class="contact-label">Email</div><div class="contact-val">sgrover3001@gmail.com</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/groversonia/" target="_blank" rel="noopener" class="contact-item">
+        <span class="contact-icon">🔗</span>
+        <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/groversonia</div></div>
+      </a>
+      <a href="https://www.datacamp.com/portfolio/sgrover3001" target="_blank" rel="noopener" class="contact-item">
+        <span class="contact-icon">📊</span>
+        <div><div class="contact-label">Data Portfolio</div><div class="contact-val">datacamp.com/portfolio/sgrover3001</div></div>
+      </a>
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <div><div class="contact-label">Location</div><div class="contact-val">Mumbai · Open to Pune / Hyderabad / Gurugram</div></div>
+      </div>
+    </div>
+    <a href="mailto:sgrover3001@gmail.com" class="cta-btn">✉ Get in touch</a>
+  </div>
+
+  <div class="footer">Sonia Grover · Updated 2025 · Built with ♥</div>
+</div>
+
+<script>
+  function switchTab(name, el) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function toggleJob(id) {
+    const job = document.getElementById(id);
+    const isOpen = job.classList.contains('open');
+    job.classList.toggle('open');
+    const btn = job.querySelector('.job-toggle-btn');
+    btn.innerHTML = isOpen
+      ? '<span class="chevron-icon">▾</span> Details'
+      : '<span class="chevron-icon" style="transform:rotate(180deg);display:inline-block">▾</span> Hide';
+  }
+</script>
+</body>
+</html>
