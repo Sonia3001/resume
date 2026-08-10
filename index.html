@@ -1,532 +1,501 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonia Grover — Resume</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:      #1B3A6B;
+    --blue:      #2563EB;
+    --blue-mid:  #3B82F6;
+    --blue-lt:   #EFF6FF;
+    --blue-rule: #BFDBFE;
+    --blue-med:  #DBEAFE;
+    --dark:      #111827;
+    --mid:       #374151;
+    --grey:      #6B7280;
+    --white:     #ffffff;
+    --page-bg:   #F8FAFF;
+  }
 
   body {
-    font-family: Arial, sans-serif;
-    font-size: 9.5pt;
-    color: #1A2332;
-    background: #fff;
-    line-height: 1.5;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--page-bg);
+    color: var(--dark);
+    font-size: 13.5px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
   .page {
-    width: 210mm;
-    margin: 0 auto;
-    padding: 10mm 13mm;
+    max-width: 860px;
+    margin: 32px auto;
+    background: var(--white);
+    box-shadow: 0 4px 32px rgba(27,58,107,0.10);
   }
 
-  /* HEADER */
-  .hdr {
-    border-bottom: 3pt solid #2A5298;
-    padding-bottom: 8pt;
-    margin-bottom: 8pt;
+  /* ── HEADER ──────────────────────────────────────── */
+  .header {
+    background: var(--navy);
+    padding: 28px 32px 24px;
   }
-
-  .name {
-    font-size: 22pt;
-    font-weight: bold;
-    color: #1C3557;
-    letter-spacing: 0.5pt;
-    margin-bottom: 2pt;
+  .header-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.3px;
+    line-height: 1.2;
   }
-
-  .tagline {
-    font-size: 9pt;
-    color: #2A5298;
-    font-weight: bold;
-    letter-spacing: 0.5pt;
-    margin-bottom: 5pt;
+  .header-tagline {
+    margin-top: 5px;
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #BFDBFE;
+    letter-spacing: 0.3px;
   }
-
-  .contact {
-    font-size: 8.5pt;
-    color: #5A6A7E;
+  .header-contact {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 11px;
+    color: #DBEAFE;
   }
-
-  .contact span {
-    margin-right: 14pt;
+  .header-contact a {
+    color: #DBEAFE;
+    text-decoration: none;
   }
+  .header-contact a:hover { text-decoration: underline; }
+  .contact-sep { color: #93C5FD; }
 
-  /* SECTION */
-  .sec {
-    margin-bottom: 8pt;
-  }
+  /* ── BODY ────────────────────────────────────────── */
+  .body { padding: 0 32px 32px; }
 
-  .sec-title {
-    font-size: 8pt;
-    font-weight: bold;
-    color: #2A5298;
+  /* ── SECTION ─────────────────────────────────────── */
+  .section { margin-top: 22px; }
+
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
-    letter-spacing: 1pt;
-    border-bottom: 1pt solid #2A5298;
-    padding-bottom: 2pt;
-    margin-bottom: 5pt;
+    color: var(--navy);
+    padding-bottom: 5px;
+    border-bottom: 1.5px solid var(--navy);
+    margin-bottom: 10px;
   }
 
-  /* SUMMARY */
+  /* ── SUMMARY ─────────────────────────────────────── */
   .summary {
-    font-size: 8.8pt;
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.75;
+    text-align: justify;
+  }
+
+  /* ── KEY ACHIEVEMENTS ────────────────────────────── */
+  .achievements {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--blue-rule);
+  }
+  .ach-item {
+    background: var(--blue-lt);
+    padding: 12px 12px 12px;
+    border-right: 1px solid var(--blue-rule);
+  }
+  .ach-item:last-child { border-right: none; }
+  .ach-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--blue-med);
+    margin: -12px -12px 8px;
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--blue-rule);
+  }
+  .ach-desc {
+    font-size: 11px;
+    color: var(--mid);
     line-height: 1.55;
-    color: #1A2332;
-    background: #EAF1F8;
-    padding: 5pt 8pt;
-    border-left: 3pt solid #2A5298;
   }
 
-  /* ACHIEVEMENTS */
-  .ach-table {
-    width: 100%;
-    border-collapse: collapse;
+  /* ── SIGNATURE PROJECTS ──────────────────────────── */
+  .projects { display: flex; flex-direction: column; gap: 10px; }
+
+  .project-card {
+    background: var(--blue-lt);
+    border: 1px solid var(--blue-rule);
+    border-left: 3px solid var(--blue);
+    padding: 13px 15px;
+  }
+  .project-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 9px;
+    line-height: 1.4;
+  }
+  .project-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 4px;
+  }
+  .project-block {}
+  .project-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .project-text {
+    font-size: 11.5px;
+    color: var(--mid);
+    line-height: 1.6;
+    text-align: justify;
   }
 
-  .ach-table td {
-    width: 25%;
-    vertical-align: top;
-    padding: 5pt 6pt 5pt 0;
-    padding-right: 8pt;
-  }
+  /* ── EXPERIENCE ──────────────────────────────────── */
+  .job { padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--blue-rule); }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
-  .ach-table td:last-child {
-    padding-right: 0;
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
   }
-
-  .ach-box {
-    background: #F4F7FB;
-    border-top: 2pt solid #2A5298;
-    padding: 4pt 5pt;
+  .job-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
   }
-
-  .ach-t {
-    font-size: 7.5pt;
-    font-weight: bold;
-    color: #1C3557;
-    margin-bottom: 2pt;
-  }
-
-  .ach-b {
-    font-size: 7.5pt;
-    color: #5A6A7E;
-    line-height: 1.45;
-  }
-
-  /* JOB */
-  .job {
-    margin-bottom: 5pt;
-    padding-bottom: 6pt;
-    border-bottom: 0.5pt solid #D6E4F0;
-  }
-
-  .job:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .job-hdr {
-    display: table;
-    width: 100%;
-    margin-bottom: 1pt;
-  }
-
-  .job-title-cell {
-    display: table-cell;
-    font-size: 10pt;
-    font-weight: bold;
-    color: #1C3557;
-  }
-
-  .job-date-cell {
-    display: table-cell;
-    text-align: right;
-    font-size: 8pt;
-    color: #fff;
+  .job-dates {
+    font-size: 11px;
+    color: var(--grey);
     white-space: nowrap;
-    vertical-align: middle;
+    flex-shrink: 0;
   }
-
-  .date-badge {
-    background: #2A5298;
-    padding: 2pt 7pt;
-    border-radius: 8pt;
-    display: inline-block;
-    font-size: 7.5pt;
+  .job-company {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-top: 2px;
   }
-
   .job-meta {
-    display: table;
-    width: 100%;
-    margin-bottom: 2pt;
-  }
-
-  .job-co {
-    display: table-cell;
-    font-size: 8.5pt;
-    font-weight: bold;
-    color: #3B82C4;
-  }
-
-  .job-loc {
-    display: table-cell;
-    text-align: right;
-    font-size: 8pt;
-    color: #5A6A7E;
-  }
-
-  .job-ctx {
-    font-size: 8pt;
-    color: #5A6A7E;
+    font-size: 11px;
+    color: var(--grey);
     font-style: italic;
-    margin-bottom: 4pt;
+    margin-top: 1px;
   }
-
-  ul.jb {
+  .job-bullets {
+    margin-top: 7px;
+    padding-left: 0;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
-
-  ul.jb li {
-    font-size: 8.5pt;
-    color: #1A2332;
-    line-height: 1.5;
-    padding-left: 10pt;
-    margin-bottom: 2pt;
+  .job-bullets li {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.6;
+    padding-left: 14px;
     position: relative;
+    text-align: justify;
   }
-
-  ul.jb li:before {
-    content: ">";
-    color: #3B82C4;
+  .job-bullets li::before {
+    content: "•";
+    color: var(--blue);
     position: absolute;
     left: 0;
-    font-size: 8pt;
-    font-weight: bold;
+    top: 0;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
-  ul.jb li b {
-    color: #1C3557;
-  }
-
-  /* SKILLS */
-  .sk-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .sk-table tr {
-    border-bottom: 0.5pt solid #D6E4F0;
-  }
-
-  .sk-table tr:last-child {
-    border-bottom: none;
-  }
-
-  .sk-cat {
-    font-size: 8pt;
-    font-weight: bold;
-    color: #1C3557;
-    padding: 3pt 8pt 3pt 0;
-    vertical-align: top;
-    width: 110pt;
+  /* ── SKILLS ──────────────────────────────────────── */
+  .skills-table { width: 100%; border-collapse: collapse; }
+  .skills-table tr { border-bottom: 1px solid var(--blue-rule); }
+  .skills-table tr:last-child { border-bottom: none; }
+  .skills-table td { padding: 6px 8px; font-size: 12px; vertical-align: top; }
+  .skills-table td:first-child {
+    width: 150px;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--blue-lt);
     white-space: nowrap;
   }
+  .skills-table td:last-child { color: var(--mid); }
 
-  .sk-val {
-    font-size: 8.5pt;
-    color: #3A3A3A;
-    padding: 3pt 0;
-    vertical-align: top;
-    line-height: 1.5;
+  /* ── EDUCATION ───────────────────────────────────── */
+  .edu-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-deg { font-size: 13px; font-weight: 600; color: var(--dark); }
+  .edu-inst { font-size: 11.5px; color: var(--blue); margin-top: 1px; }
+  .edu-yr { font-size: 11px; color: var(--grey); white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── MARKETS ─────────────────────────────────────── */
+  .markets {
+    display: flex;
+    gap: 0;
+    border: 1px solid #93C5FD;
   }
-
-  /* BOTTOM TWO COL */
-  .two-col {
-    display: table;
-    width: 100%;
+  .market-item {
+    flex: 1;
+    background: var(--blue-lt);
+    text-align: center;
+    padding: 7px 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--navy);
+    border-right: 1px solid #93C5FD;
+    letter-spacing: 0.2px;
   }
+  .market-item:last-child { border-right: none; }
 
-  .col-left {
-    display: table-cell;
-    width: 55%;
-    vertical-align: top;
-    padding-right: 14pt;
+  @media print {
+    body { background: white; font-size: 12px; }
+    .page { margin: 0; box-shadow: none; max-width: 100%; }
   }
-
-  .col-right {
-    display: table-cell;
-    width: 45%;
-    vertical-align: top;
-  }
-
-  /* EDU */
-  .edu-row {
-    display: table;
-    width: 100%;
-    margin-bottom: 5pt;
-    border-bottom: 0.5pt solid #D6E4F0;
-    padding-bottom: 4pt;
-  }
-
-  .edu-row:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-
-  .edu-left {
-    display: table-cell;
-    vertical-align: top;
-  }
-
-  .edu-deg {
-    font-size: 8.5pt;
-    font-weight: bold;
-    color: #1C3557;
-  }
-
-  .edu-sch {
-    font-size: 8pt;
-    color: #3B82C4;
-  }
-
-  .edu-yr {
-    display: table-cell;
-    text-align: right;
-    font-size: 7.5pt;
-    color: #2A5298;
-    font-weight: bold;
-    white-space: nowrap;
-    vertical-align: top;
-    padding-left: 6pt;
-  }
-
-  /* MARKETS */
-  .mkt {
-    font-size: 8.5pt;
-    color: #3A3A3A;
-    line-height: 1.9;
-  }
-
-  .mkt-tag {
-    display: inline-block;
-    background: #EAF1F8;
-    color: #1C3557;
-    font-size: 8pt;
-    font-weight: bold;
-    padding: 1.5pt 7pt;
-    margin: 2pt 2pt 0 0;
-    border: 0.5pt solid #C5D8EF;
-  }
-
 </style>
 </head>
 <body>
 <div class="page">
 
   <!-- HEADER -->
-  <div class="hdr">
-    <div class="name">SONIA GROVER</div>
-    <div class="tagline">Global Marketing Leader &nbsp;|&nbsp; Product Marketing &nbsp;|&nbsp; B2B International Markets</div>
-    <div class="contact">
+  <div class="header">
+    <div class="header-name">SONIA GROVER</div>
+    <div class="header-tagline">Global Marketing Leader &nbsp;·&nbsp; Product Marketing &nbsp;·&nbsp; B2B International Markets</div>
+    <div class="header-contact">
       <span>sgrover3001@gmail.com</span>
-      <span>https://www.linkedin.com/in/groversonia/</span>
-      <span>Mumbai | Open to Pune / Hyderabad / Gurugram</span>
+      <span class="contact-sep">|</span>
+      <a href="https://www.linkedin.com/in/groversonia/" target="_blank">linkedin.com/in/groversonia</a>
+      <span class="contact-sep">|</span>
+      <span>Mumbai &mdash; Open to Pune / Hyderabad / Gurugram</span>
     </div>
   </div>
 
-  <!-- SUMMARY -->
-  <div class="sec">
-    <div class="sec-title">Professional Summary</div>
-    <div class="summary">
-      Global marketing professional with 10+ years delivering end-to-end marketing for international B2B organisations — across financial services, SaaS, and research technology sectors. Experienced in aligning with global stakeholders across USA, Europe &amp; APAC on strategy, brand, and pipeline. Combines product positioning, GTM strategy, ICP &amp; cohort analysis, and full-funnel content production (sales decks, whitepapers, landing pages) with AI-assisted content, HubSpot, ABM, and Python-based analytics. Delivered 25% YoY MQL growth and 20% brand presence improvement across 7+ international markets.
-    </div>
-  </div>
+  <div class="body">
 
-  <!-- ACHIEVEMENTS -->
-  <div class="sec">
-    <div class="sec-title">Key Achievements</div>
-    <table class="ach-table">
-      <tr>
-        <td><div class="ach-box"><div class="ach-t">Offshore–Onshore Marketing</div><div class="ach-b">Delivered full marketing function from India for international organisations across USA, Europe &amp; APAC — aligning with global leadership on strategy and pipeline.</div></div></td>
-        <td><div class="ach-box"><div class="ach-t">25% YoY MQL Growth</div><div class="ach-b">Pipeline growth across 7+ markets through ABM, content assets, and performance marketing for B2B financial services and SaaS organisations.</div></div></td>
-        <td><div class="ach-box"><div class="ach-t">GTM &amp; Product Launches</div><div class="ach-b">Built GTM strategies for new product launches — ICP analysis, competitive positioning, sales decks, landing pages, and sales enablement collateral.</div></div></td>
-        <td><div class="ach-box"><div class="ach-t">Global Content Programmes</div><div class="ach-b">Played a key role in producing whitepapers, case studies, sales decks &amp; landing pages across TOFU and MOFU stages for global teams across geographies.</div></div></td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="sec">
-    <div class="sec-title">Experience</div>
-
-    <!-- NAV -->
-    <div class="job">
-      <div class="job-hdr">
-        <div class="job-title-cell">Sr. Digital Marketing &amp; Product Marketing Manager</div>
-        <div class="job-date-cell"><span class="date-badge">Jan 2021 – Present</span></div>
-      </div>
-      <div class="job-meta">
-        <div class="job-co">NAV Fund Administration (NAV Consulting)</div>
-        <div class="job-loc">Mumbai, India — Remote</div>
-      </div>
-      <div class="job-ctx">Alternative investment fund administration — institutional B2B across USA, Europe &amp; APAC</div>
-      <ul class="jb">
-        <li><b>Global stakeholder management:</b> Owned end-to-end marketing strategy for an internationally headquartered organisation, aligning with leadership across USA and Europe on annual marketing plans, brand positioning, and pipeline priorities.</li>
-        <li><b>Product positioning &amp; sales enablement:</b> Translated complex fund administration products into institutional value propositions; supported creation of sales decks and pitch materials for BD teams and external stakeholder presentations across international markets.</li>
-        <li><b>Content asset programme:</b> Played a key role in building and managing a library of TOFU and MOFU assets — whitepapers, industry reports, case studies, client testimonials, and landing pages — coordinating across teams from brief to distribution.</li>
-        <li><b>ICP &amp; cohort analysis:</b> Ideal Customer Profiles for new and existing segments; cohort analysis to inform nurture sequencing and content personalisation strategies.</li>
-        <li><b>AI-assisted content:</b> Leveraged AI tools for copywriting, accelerating production of email sequences, website content, and campaign copy at scale for global audiences.</li>
-          <li><b>Video content programme:</b> Collaborated cross-functionally to conceptualise and brief feature and short-form video content for product and brand initiatives, managing external video production vendors end-to-end from brief to final delivery.</li>
-        <li>Spearheaded full-funnel digital transformation — 25% YoY MQL growth; 20% YoY brand presence improvement via integrated multichannel campaigns and ABM.</li>
-        <li>Implemented account-based marketing (ABM) strategies targeting high-value institutional accounts, boosting targeted lead quality and accelerating pipeline velocity.</li>
-        <li>Liaised with IT team to implement an in-house tracking and reporting system, enabling data-driven campaign optimisation.</li>
-        <li>Led 15+ award submissions, winning key industry recognition to establish market credibility.</li>
-        <li>Managed and mentored a team of 3–4 marketing professionals and coordinated global media agency relationships.</li>
-      </ul>
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary">
+        Global marketing professional with <strong>10+ years</strong> delivering end-to-end marketing for international B2B organisations across financial services, SaaS, and research technology sectors. Experienced in aligning with global stakeholders across <strong>USA, Europe &amp; APAC</strong> on strategy, brand, and pipeline. Combines product positioning, GTM strategy, ICP &amp; cohort analysis, and full-funnel content production (sales decks, whitepapers, landing pages) with AI-assisted content, HubSpot, ABM, and Python-based analytics. Delivered <strong>25% YoY MQL growth</strong> and <strong>20% brand presence improvement</strong> across <strong>7+ international markets</strong>.
+      </p>
     </div>
 
-    <!-- CRIMSON -->
-    <div class="job">
-      <div class="job-hdr">
-        <div class="job-title-cell">Unit Lead — Product &amp; Growth Marketing</div>
-        <div class="job-date-cell"><span class="date-badge">Apr 2019 – Dec 2020</span></div>
-      </div>
-      <div class="job-meta">
-        <div class="job-co">Crimson Interactive (Enago)</div>
-        <div class="job-loc">Mumbai, India</div>
-      </div>
-      <div class="job-ctx">Academic research services — B2B &amp; B2C across Japan, China, Taiwan, Korea, USA</div>
-      <ul class="jb">
-        <li><b>GTM strategy:</b> Developed and executed go-to-market strategies for new product and service launches — positioning, competitive analysis, messaging frameworks, sales decks, and enablement for global teams.</li>
-        <li><b>Cross-cultural marketing:</b> Managed localised campaigns for Japan, Korea, Taiwan, China, and USA — adapting messaging, landing pages, and media strategy per market context.</li>
-        <li><b>Content &amp; automation:</b> Supported TOFU and MOFU asset production (whitepapers, case studies, landing pages); launched upsell, cart abandonment, and drip automation campaigns contributing significantly to revenue growth.</li>
-        <li>Developed long-term omnichannel marketing plan (SEO, PPC, social, email) across 5 international markets to acquire new clients, retain existing clients, and increase wallet size.</li>
-        <li>Managed JP-focused website and leveraged Google Analytics, Qlik Sense, and Hotjar for user behaviour analysis informing product and content decisions.</li>
-        <li>Boosted top-of-funnel lead generation by implementing targeted content marketing and SEO strategies.</li>
-        <li>Conducted in-depth data analysis for user behaviour before launching new service or product.</li>
-      </ul>
-    </div>
-
-    <!-- LOGINEXT -->
-    <div class="job">
-      <div class="job-hdr">
-        <div class="job-title-cell">Marketing Associate</div>
-        <div class="job-date-cell"><span class="date-badge">Mar 2017 – Dec 2018</span></div>
-      </div>
-      <div class="job-meta">
-        <div class="job-co">LogiNext Solutions Pvt. Ltd.</div>
-        <div class="job-loc">Mumbai, India</div>
-      </div>
-      <div class="job-ctx">SaaS logistics platform — B2B across USA, Middle East &amp; Southeast Asia</div>
-      <ul class="jb">
-        <li>Worked on full-funnel digital marketing initiatives, creating varied funnels for personalised marketing.</li>
-        <li>Drove SEM (Google Ads &amp; Yahoo Ads) campaigns for Search/Display including retargeting; increased lead generation by ~10–20% managing USD 30–50k annual budget across USA, Middle East, and Southeast Asia.</li>
-        <li>Managed &amp; optimised audiences, creatives, and landing pages for performance improvement.</li>
-        <li>Managed retargeting (paid display) and remarketing (email) campaigns to re-engage prospects and past visitors.</li>
-        <li>Coordinated over 10 marketing events annually in USA and Southeast Asia, with budgets between USD 5k and 30k each.</li>
-        <li>Improved organic traffic by 12% through SEO strategies — on-page and off-page.</li>
-        <li>Created and optimised top-funnel campaigns generating 20% of total qualified leads by designing targeted content and creatives.</li>
-      </ul>
-    </div>
-
-    <!-- NEXTGEN -->
-    <div class="job">
-      <div class="job-hdr">
-        <div class="job-title-cell">Account Manager</div>
-        <div class="job-date-cell"><span class="date-badge">Jul 2016 – Jan 2017</span></div>
-      </div>
-      <div class="job-meta">
-        <div class="job-co">NextGen Publishing Pvt. Ltd., Shapoorji Pallonji Group</div>
-        <div class="job-loc">India</div>
-      </div>
-      <ul class="jb">
-        <li>Handled key accounts including Kent; identified co-branding opportunities and led regional ad sales across Hindi/Regional consumer markets.</li>
-        <li>Collaborated with editorial and creative teams to deliver culturally relevant content and campaigns.</li>
-      </ul>
-    </div>
-
-    
-  </div>
-
-  <!-- KEY SKILLS -->
-  <div class="sec">
-    <div class="sec-title">Key Skills</div>
-    <table class="sk-table">
-      <tr>
-        <td class="sk-cat">Global Marketing</td>
-        <td class="sk-val">Offshore–Onshore Delivery · Global Stakeholder Management · Cross-Cultural Marketing · International B2B Strategy · Annual Marketing Plans </td>
-      </tr>
-      <tr>
-        <td class="sk-cat">Product Marketing</td>
-        <td class="sk-val">Positioning · Messaging Architecture · GTM Strategy · ICP Analysis · Cohort Analysis · Sales Enablement · Sales Decks · Whitepapers · Case Studies · Landing Pages · Market Intelligence</td>
-      </tr>
-      <tr>
-        <td class="sk-cat">AI &amp; Content</td>
-        <td class="sk-val">AI-Assisted Marketing &amp; Copywriting · n8n · Zapier · Python · Prompt Engineering for Marketing · Marketing Automation</td>
-      </tr>
-      <tr>
-        <td class="sk-cat">Demand Generation</td>
-        <td class="sk-val">ABM · Full-Funnel Marketing · Email Marketing · MQL Optimisation · Nurture Programmes · Performance Marketing · Content Marketing</td>
-      </tr>
-      <tr>
-        <td class="sk-cat">Digital Marketing</td>
-        <td class="sk-val">SEO / SEM · PPC · Google Ads · LinkedIn Ads · Social Media Marketing · A/B Testing · Conversion Rate Optimisation</td>
-      </tr>
-      <tr>
-        <td class="sk-cat">Analytics &amp; CRM</td>
-        <td class="sk-val">GA4 · SQL · Python · Qlik Sense · Hotjar · SEMrush · Ahrefs · HubSpot · Salesforce · Mailchimp · Google Data Studio</td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- BOTTOM TWO COL -->
-  <div class="two-col">
-    <div class="col-left">
-      <div class="sec">
-        <div class="sec-title">Education</div>
-        <div class="edu-row">
-          <div class="edu-left">
-            <div class="edu-deg">PCP (eMDP) — Advanced Marketing Analytics</div>
-            <div class="edu-sch">IIM Kozhikode — Executive Programme (PCP)</div>
-          </div>
-          <div class="edu-yr">2022</div>
+    <!-- KEY ACHIEVEMENTS -->
+    <div class="section">
+      <div class="section-title">Key Achievements</div>
+      <div class="achievements">
+        <div class="ach-item">
+          <div class="ach-title">Offshore–Onshore Marketing</div>
+          <div class="ach-desc">Delivered full marketing function from India for international organisations across USA, Europe &amp; APAC — aligning with global leadership on strategy and pipeline.</div>
         </div>
-        <div class="edu-row">
-          <div class="edu-left">
-            <div class="edu-deg">PGDM — Digital Marketing</div>
-            <div class="edu-sch">Universal Ai University (UBS)</div>
-          </div>
-          <div class="edu-yr">2014–16</div>
+        <div class="ach-item">
+          <div class="ach-title">25% YoY MQL Growth</div>
+          <div class="ach-desc">Pipeline growth across 7+ markets through ABM, content assets, and performance marketing for B2B financial services and SaaS organisations.</div>
         </div>
-        <div class="edu-row">
-          <div class="edu-left">
-            <div class="edu-deg">B.Tech — Computer Science</div>
-            <div class="edu-sch">Rajasthan Technical University, Kota</div>
-          </div>
-          <div class="edu-yr">2010–14</div>
+        <div class="ach-item">
+          <div class="ach-title">GTM &amp; Product Launches</div>
+          <div class="ach-desc">Built GTM strategies for new product launches — ICP analysis, competitive positioning, sales decks, landing pages, and sales enablement collateral.</div>
+        </div>
+        <div class="ach-item">
+          <div class="ach-title">Global Content Programmes</div>
+          <div class="ach-desc">Played a key role in producing whitepapers, case studies, sales decks &amp; landing pages across TOFU and MOFU stages for global teams across geographies.</div>
         </div>
       </div>
     </div>
-    <div class="col-right">
-      <div class="sec">
-        <div class="sec-title">International Market Experience</div>
+
+    <!-- SIGNATURE PROJECTS -->
+    <div class="section">
+      <div class="section-title">Signature Projects</div>
+      <div class="projects">
+
+        <div class="project-card">
+          <div class="project-title">Multi-Stage B2B Lead Nurture &amp; Qualification Framework — HubSpot Automation</div>
+          <div class="project-row">
+            <div class="project-block">
+              <div class="project-label">What I Built</div>
+              <div class="project-text">A complex HubSpot automation combining lifecycle stage, lead source, ICP attributes, engagement scoring, and behavioural triggers — email opens, content downloads, website activity, and form submissions. Conditional branches routed contacts into targeted nurture sequences, re-engagement flows, or direct sales follow-up. Incorporated suppression logic to prevent overlapping campaigns, automated lifecycle-stage updates, sales handoffs, and consistent UTM/source structures for attribution.</div>
+            </div>
+            <div class="project-block">
+              <div class="project-label">Impact</div>
+              <div class="project-text">Moved from broad, linear email campaigns to intent-based journeys with clear qualification and routing logic — reducing manual intervention, improving targeting precision, and giving the sales team meaningful visibility into lead intent and funnel progression.</div>
+            </div>
+            <div class="project-block">
+              <div class="project-label">Key Learning</div>
+              <div class="project-text">Effective marketing automation is as much about data architecture and governance as workflow building. Clean lifecycle definitions, suppression rules, documentation, and regular data-quality audits are critical for scalable automation and reliable attribution.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-title">Lead Scoring &amp; Funnel Visibility — Restructuring MQL / SQL Qualification</div>
+          <div class="project-row">
+            <div class="project-block">
+              <div class="project-label">What I Built</div>
+              <div class="project-text">Identified a gap between marketing engagement and sales prioritisation caused by relying solely on lead volume. Introduced a structured qualification framework using ICP fit, lead attributes, lifecycle stage, and behavioural engagement scoring within the CRM. Aligned scoring logic with lifecycle stages to enable systematic progression from marketing engagement through MQL to SQL, and built funnel reporting to monitor conversion and drop-off.</div>
+            </div>
+            <div class="project-block">
+              <div class="project-label">Impact</div>
+              <div class="project-text">Shifted the core question from "How many leads did marketing generate?" to "Which leads show meaningful intent, where are they dropping off, and which activities contribute to pipeline?" — enabling better audience targeting, higher-intent sales prioritisation, and campaign optimisation based on funnel performance rather than surface-level engagement.</div>
+            </div>
+            <div class="project-block">
+              <div class="project-label">Key Learning</div>
+              <div class="project-text">Lead scoring works best when fit, behaviour, and lifecycle stage are considered together. High engagement alone does not equal high quality — the framework must reflect both intent and business relevance to be a reliable input for sales and marketing alignment.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">Work Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Sr. Digital Marketing &amp; Product Marketing Manager</div>
+          <div class="job-dates">Jan 2021 – Present</div>
+        </div>
+        <div class="job-company">NAV Fund Administration (NAV Consulting) &nbsp;|&nbsp; Mumbai, India — Remote</div>
+        <div class="job-meta">Alternative investment fund administration — institutional B2B across USA, Europe &amp; APAC</div>
+        <ul class="job-bullets">
+          <li><strong>Global stakeholder management:</strong> Owned end-to-end marketing strategy for an internationally headquartered organisation, aligning with leadership across USA and Europe on annual marketing plans, brand positioning, and pipeline priorities.</li>
+          <li><strong>Product positioning &amp; sales enablement:</strong> Translated complex fund administration products into institutional value propositions; supported creation of sales decks and pitch materials for BD teams and external stakeholder presentations across international markets.</li>
+          <li><strong>Content asset programme:</strong> Played a key role in building and managing a library of TOFU and MOFU assets — whitepapers, industry reports, case studies, client testimonials, and landing pages — coordinating across teams from brief to distribution.</li>
+          <li><strong>ICP &amp; cohort analysis:</strong> Developed Ideal Customer Profiles for new and existing segments; cohort analysis to inform nurture sequencing and content personalisation strategies.</li>
+          <li><strong>AI-assisted content:</strong> Leveraged AI tools for copywriting, accelerating production of email sequences, website content, and campaign copy at scale for global audiences.</li>
+          <li><strong>Video content programme:</strong> Collaborated cross-functionally to conceptualise and brief feature and short-form video content for product and brand initiatives, managing external video production vendors end-to-end from brief to final delivery.</li>
+          <li>Spearheaded full-funnel digital transformation — 25% YoY MQL growth; 20% YoY brand presence improvement via integrated multichannel campaigns and ABM.</li>
+          <li>Implemented ABM strategies targeting high-value institutional accounts, boosting targeted lead quality and accelerating pipeline velocity.</li>
+          <li>Liaised with IT team to implement an in-house tracking and reporting system, enabling data-driven campaign optimisation.</li>
+          <li>Led 15+ award submissions, winning key industry recognition to establish market credibility.</li>
+          <li>Managed and mentored a team of 3–4 marketing professionals and coordinated global media agency relationships.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Unit Lead — Product &amp; Growth Marketing</div>
+          <div class="job-dates">Apr 2019 – Dec 2020</div>
+        </div>
+        <div class="job-company">Crimson Interactive (Enago) &nbsp;|&nbsp; Mumbai, India</div>
+        <div class="job-meta">Academic research services — B2B &amp; B2C across Japan, China, Taiwan, Korea, USA</div>
+        <ul class="job-bullets">
+          <li><strong>GTM strategy:</strong> Developed and executed go-to-market strategies for new product and service launches — positioning, competitive analysis, messaging frameworks, sales decks, and enablement for global teams.</li>
+          <li><strong>Cross-cultural marketing:</strong> Managed localised campaigns for Japan, Korea, Taiwan, China, and USA — adapting messaging, landing pages, and media strategy per market context.</li>
+          <li><strong>Content &amp; automation:</strong> Supported TOFU and MOFU asset production (whitepapers, case studies, landing pages); launched upsell, cart abandonment, and drip automation campaigns contributing significantly to revenue growth.</li>
+          <li>Developed long-term omnichannel marketing plan (SEO, PPC, social, email) across 5 international markets to acquire new clients, retain existing clients, and increase wallet size.</li>
+          <li>Managed JP-focused website and leveraged Google Analytics, Qlik Sense, and Hotjar for user behaviour analysis informing product and content decisions.</li>
+          <li>Boosted top-of-funnel lead generation by implementing targeted content marketing and SEO strategies.</li>
+          <li>Conducted in-depth data analysis for user behaviour before launching new service or product.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Marketing Associate</div>
+          <div class="job-dates">Mar 2017 – Dec 2018</div>
+        </div>
+        <div class="job-company">LogiNext Solutions Pvt. Ltd. &nbsp;|&nbsp; Mumbai, India</div>
+        <div class="job-meta">SaaS logistics platform — B2B across USA, Middle East &amp; Southeast Asia</div>
+        <ul class="job-bullets">
+          <li>Worked on full-funnel digital marketing initiatives, creating varied funnels for personalised marketing.</li>
+          <li>Drove SEM (Google Ads &amp; Yahoo Ads) campaigns for Search/Display including retargeting; increased lead generation by ~10–20% managing USD 30–50k annual budget across USA, Middle East, and Southeast Asia.</li>
+          <li>Managed &amp; optimised audiences, creatives, and landing pages for performance improvement.</li>
+          <li>Managed retargeting (paid display) and remarketing (email) campaigns to re-engage prospects and past visitors.</li>
+          <li>Coordinated over 10 marketing events annually in USA and Southeast Asia, with budgets between USD 5k and 30k each.</li>
+          <li>Improved organic traffic by 12% through SEO strategies — on-page and off-page.</li>
+          <li>Created and optimised top-funnel campaigns generating 20% of total qualified leads by designing targeted content and creatives.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Account Manager</div>
+          <div class="job-dates">Jul 2016 – Jan 2017</div>
+        </div>
+        <div class="job-company">NextGen Publishing Pvt. Ltd., Shapoorji Pallonji Group &nbsp;|&nbsp; India</div>
+        <div class="job-meta">Publishing &amp; Media</div>
+        <ul class="job-bullets">
+          <li>Handled key accounts including Kent; identified co-branding opportunities and led regional ad sales across Hindi/Regional consumer markets.</li>
+          <li>Collaborated with editorial and creative teams to deliver culturally relevant content and campaigns.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- KEY SKILLS -->
+    <div class="section">
+      <div class="section-title">Key Skills</div>
+      <table class="skills-table">
+        <tr><td>Global Marketing</td><td>Offshore–Onshore Delivery · Global Stakeholder Management · Cross-Cultural Marketing · International B2B Strategy · Annual Marketing Plans · Portfolio Strategy</td></tr>
+        <tr><td>Product Marketing</td><td>Positioning · Messaging Architecture · GTM Strategy · ICP Analysis · Cohort Analysis · Sales Enablement · Sales Decks · Whitepapers · Case Studies · Landing Pages · Market Intelligence</td></tr>
+        <tr><td>AI &amp; Content</td><td>AI-Assisted Marketing &amp; Copywriting · n8n · Zapier · Python · Prompt Engineering for Marketing · Marketing Automation</td></tr>
+        <tr><td>Demand Generation</td><td>ABM · Full-Funnel Marketing · Email Marketing · MQL Optimisation · Nurture Programmes · Performance Marketing · Content Marketing</td></tr>
+        <tr><td>Digital Marketing</td><td>SEO / SEM · PPC · Google Ads · LinkedIn Ads · Social Media Marketing · A/B Testing · Conversion Rate Optimisation</td></tr>
+        <tr><td>Analytics &amp; CRM</td><td>GA4 · SQL · Python · Qlik Sense · Hotjar · SEMrush · Ahrefs · HubSpot · Salesforce · Mailchimp · Google Data Studio</td></tr>
+      </table>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="edu-item">
         <div>
-          <span class="mkt-tag">USA</span>
-          <span class="mkt-tag">Japan</span>
-          <span class="mkt-tag">China</span>
-          <span class="mkt-tag">South Korea</span>
-          <span class="mkt-tag">Taiwan</span>
-          <span class="mkt-tag">Middle East</span>
-          <span class="mkt-tag">Southeast Asia</span>
-          <span class="mkt-tag">Europe</span>
+          <div class="edu-deg">PCP (eMDP) — Advanced Marketing Analytics</div>
+          <div class="edu-inst">IIM Kozhikode — Executive Programme (PCP)</div>
         </div>
+        <div class="edu-yr">2022</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">PGDM — Digital Marketing</div>
+          <div class="edu-inst">Universal Ai University (UBS)</div>
+        </div>
+        <div class="edu-yr">2014–16</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">B.Tech — Computer Science</div>
+          <div class="edu-inst">Rajasthan Technical University, Kota</div>
+        </div>
+        <div class="edu-yr">2010–14</div>
       </div>
     </div>
-  </div>
 
-</div>
+    <!-- INTERNATIONAL MARKETS -->
+    <div class="section">
+      <div class="section-title">International Market Experience</div>
+      <div class="markets">
+        <div class="market-item">USA</div>
+        <div class="market-item">Japan</div>
+        <div class="market-item">China</div>
+        <div class="market-item">South Korea</div>
+        <div class="market-item">Taiwan</div>
+        <div class="market-item">Middle East</div>
+        <div class="market-item">Southeast Asia</div>
+        <div class="market-item">Europe</div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+</div><!-- /page -->
 </body>
 </html>
