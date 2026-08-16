@@ -128,41 +128,61 @@
   }
 
   /* ── SIGNATURE PROJECTS ──────────────────────────── */
-  .projects { display: flex; flex-direction: column; gap: 10px; }
-
-  .project-card {
-    background: var(--blue-lt);
-    border: 1px solid var(--blue-rule);
-    border-left: 3px solid var(--blue);
-    padding: 13px 15px;
-  }
-  .project-title {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 9px;
-    line-height: 1.4;
-  }
-  .project-row {
+  .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px;
-    margin-top: 4px;
+    gap: 10px;
   }
-  .project-block {}
-  .project-label {
-    font-size: 10px;
+
+  .proj-card {
+    background: var(--blue-lt);
+    border: 1px solid var(--blue-rule);
+    border-top: 3px solid var(--navy);
+    padding: 12px 13px 13px;
+  }
+
+  .proj-tag {
+    font-size: 9px;
     font-weight: 700;
     color: var(--blue);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
-  .project-text {
+
+  .proj-title {
     font-size: 11.5px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .proj-divider {
+    height: 1px;
+    background: var(--blue-rule);
+    margin-bottom: 9px;
+  }
+
+  .proj-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .proj-col {}
+
+  .proj-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+
+  .proj-text {
+    font-size: 11px;
     color: var(--mid);
     line-height: 1.6;
-    text-align: justify;
   }
 
   /* ── EXPERIENCE ──────────────────────────────────── */
@@ -277,9 +297,9 @@
   <!-- HEADER -->
   <div class="header">
     <div class="header-name">SONIA GROVER</div>
-    <div class="header-tagline">Global Marketing Leader &nbsp;·&nbsp; Product and Digital Marketing &nbsp;·&nbsp; B2B International Markets</div>
+    <div class="header-tagline">Global Marketing Leader &nbsp;·&nbsp; Product Marketing &nbsp;·&nbsp; B2B International Markets</div>
     <div class="header-contact">
-      <a href="mailto:sgrover3001@gmail.com" target="_blank">sgrover3001@gmail.com</a>
+      <span>sgrover3001@gmail.com</span>
       <span class="contact-sep">|</span>
       <a href="https://www.linkedin.com/in/groversonia/" target="_blank">linkedin.com/in/groversonia</a>
       <span class="contact-sep">|</span>
@@ -323,40 +343,52 @@
     <!-- SIGNATURE PROJECTS -->
     <div class="section">
       <div class="section-title">Signature Projects</div>
-      <div class="projects">
+      <div class="projects-grid">
 
-        <div class="project-card">
-          <div class="project-title">Multi-Stage B2B Lead Nurture &amp; Qualification Framework — HubSpot Automation</div>
-          <div class="project-row">
-            <div class="project-block">
-              <div class="project-label">What I Built</div>
-              <div class="project-text">HubSpot automation combining lifecycle stage, ICP fit, engagement scoring, and behavioural triggers. Conditional branches routed contacts into nurture sequences, re-engagement flows, or sales follow-up — with suppression logic and automated lifecycle-stage updates throughout.</div>
+        <div class="proj-card">
+          <div class="proj-tag">Marketing Automation</div>
+          <div class="proj-title">HubSpot Multi-Stage Lead Nurture &amp; Qualification</div>
+          <div class="proj-divider"></div>
+          <div class="proj-row">
+            <div class="proj-col">
+              <div class="proj-label">&#9654; What</div>
+              <div class="proj-text">Built a HubSpot automation using lifecycle stage, ICP fit, engagement scoring, and behavioural triggers — routing contacts into nurture, re-engagement, or sales follow-up with suppression logic throughout.</div>
             </div>
-            <div class="project-block">
-              <div class="project-label">Impact</div>
-              <div class="project-text">Replaced linear email blasts with intent-based journeys — reducing manual intervention and giving sales clearer visibility into lead intent and funnel stage.</div>
-            </div>
-            <div class="project-block">
-              <div class="project-label">Key Learning</div>
-              <div class="project-text">Automation is as much about data governance as workflow design. Clean lifecycle definitions, suppression rules, and regular data-quality audits are what make it scalable.</div>
+            <div class="proj-col">
+              <div class="proj-label">&#9654; Impact</div>
+              <div class="proj-text">Moved from batch-and-blast to intent-based journeys — less manual work, better targeting, and clearer lead intent for the sales team.</div>
             </div>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-title">Lead Scoring &amp; Funnel Visibility — Restructuring MQL / SQL Qualification</div>
-          <div class="project-row">
-            <div class="project-block">
-              <div class="project-label">What I Built</div>
-              <div class="project-text">A qualification framework using ICP fit, lead attributes, lifecycle stage, and behavioural engagement scoring in the CRM — aligned to MQL/SQL progression with funnel reporting to surface drop-off points.</div>
+        <div class="proj-card">
+          <div class="proj-tag">Demand Generation</div>
+          <div class="proj-title">Lead Scoring &amp; Funnel Visibility — MQL / SQL Restructure</div>
+          <div class="proj-divider"></div>
+          <div class="proj-row">
+            <div class="proj-col">
+              <div class="proj-label">&#9654; What</div>
+              <div class="proj-text">Introduced a qualification framework using ICP fit, lifecycle stage, and behavioural scoring in the CRM — with funnel reporting to track MQL-to-SQL conversion and drop-off.</div>
             </div>
-            <div class="project-block">
-              <div class="project-label">Impact</div>
-              <div class="project-text">Shifted focus from lead volume to lead intent — enabling better sales prioritisation and campaign decisions based on funnel performance rather than surface-level engagement metrics.</div>
+            <div class="proj-col">
+              <div class="proj-label">&#9654; Impact</div>
+              <div class="proj-text">Shifted the conversation from lead volume to lead intent — giving sales better-quality leads and making campaign decisions more funnel-driven.</div>
             </div>
-            <div class="project-block">
-              <div class="project-label">Key Learning</div>
-              <div class="project-text">Fit, behaviour, and lifecycle stage need to work together. High engagement alone doesn't signal quality — the scoring model must reflect both intent and business relevance.</div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-tag">GTM &amp; Product Marketing</div>
+          <div class="proj-title">Go-to-Market — Multi-Market Product Launches (Enago)</div>
+          <div class="proj-divider"></div>
+          <div class="proj-row">
+            <div class="proj-col">
+              <div class="proj-label">&#9654; What</div>
+              <div class="proj-text">Built GTM frameworks for new research service launches — ICP definition, competitive positioning, messaging, and localised landing pages across Japan, Korea, Taiwan, China, and USA. Created sales decks and enablement materials for global teams.</div>
+            </div>
+            <div class="proj-col">
+              <div class="proj-label">&#9654; Impact</div>
+              <div class="proj-text">Enabled consistent launches across 5 markets with localised messaging — contributing to top-of-funnel growth and upsell revenue.</div>
             </div>
           </div>
         </div>
